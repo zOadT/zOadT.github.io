@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<title>Cupid's arrows</title><link rel='icon' type='image/png' href='favicon.png' />	<style>
+	*{
+		background-color: black;
+		margin: 0;
+	}
+	body, canvas {
+		position: fixed;
+		
+		image-rendering: pixelated;
+		image-rendering: optimizeSpeed;
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -webkit-optimize-contras;
+		image-rendering: -o-crisp-edges;
+		image-rendering: optimize-contrast;
+		-ms-interpolation-mode: nearest-neighbor;//funkt ned
+	}
+	</style>
+</head>
+<body>
+	<canvas id='canvas'>Please use the latest version on Firefox, Google Chrome or Opera</canvas>
+	
+	<script src='browser-polyfill.js'></script>
+	<script src='system.js'></script>
+	<script>
+	System.import('ENGINE/0.1.1').then(
+		function(ENGINE) {
+			window.app = new ENGINE.default({"id":"testtest","canvas":"canvas","modules":["data","2Dcontext","entity","scenes","keyboard","gamepads","components","mouse","audio","~geo"],"title":"Cupid's arrows","components":["position"],"data":["levels - Kopie","levels"],"entities":["arrow","guard","player"],"images":["arrow","failed","guard","guardwatching","hint","hint2","Intro","level1","level1old","player","playerlove","playerwatching","selection","selection2","thanks","tiles"],"scenes":["-intro","failed","hint","main"],"sounds":["alert","next","shoot"]});
+		}
+	);
+	</script>
+</body>
+</html>
